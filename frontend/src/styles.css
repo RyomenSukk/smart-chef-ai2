@@ -1,96 +1,181 @@
+/* นำเข้าฟอนต์ภาษาไทยสวยๆ (ตัวเลือกเสริม) */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap');
+
 body {
   margin: 0;
-  background: #f9f9f9;
-  color: #111;
+  /* พื้นหลังสีครีมอ่อนๆ ให้ความรู้สึกเหมือนครัวที่อบอุ่น */
+  background: #fffaf4; 
+  color: #4a4a4a;
 }
+
 :root {
-  font-family: system-ui, sans-serif;
+  font-family: 'Kanit', system-ui, sans-serif;
 }
 
 .container {
   max-width: 1100px;
-  margin: 24px auto;
+  margin: 32px auto;
   padding: 0 16px;
+}
+
+/* ตกแต่งหัวข้อให้มีสีสันน่ารัก */
+h1 {
+  color: #e65100;
+  text-align: center;
+  margin-bottom: 32px;
+  font-weight: 600;
+}
+
+h2 {
+  color: #2e7d32;
+  font-size: 1.25rem;
+  margin-bottom: 16px;
+  border-bottom: 2px dashed #c8e6c9;
+  padding-bottom: 8px;
+}
+
+h3, h4 {
+  color: #d84315;
 }
 
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 24px;
 }
 
+/* Card ดูลอยขึ้นมาด้วย Shadow นุ่มๆ */
 .card {
-  border: 1px solid #e5e5e5;
-  border-radius: 12px;
-  padding: 16px;
-  background: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 24px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
 }
 
 .row {
   display: flex;
-  gap: 8px;
+  gap: 12px;
   align-items: end;
   flex-wrap: wrap;
 }
 
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #666;
+}
+
+/* กล่อง Input และ Select หม่นๆ ซอฟต์ๆ สบายตา */
 .input {
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
+  box-sizing: border-box; /* เพิ่มบรรทัดนี้: ให้คำนวณ padding และ border รวมใน 100% */
+  resize: vertical; /* เพิ่มบรรทัดนี้: ให้ดึงขยายกรอบข้อความได้แค่แนวตั้ง */
+  padding: 12px 16px;
+  border: 2px solid #eae5df;
+  border-radius: 12px;
+  background-color: #fdfbf9;
+  color: #555;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: all 0.2s ease-in-out;
 }
 
+.input:focus {
+  outline: none;
+  border-color: #ffab91;
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgba(255, 171, 145, 0.2);
+}
+
+/* ปุ่มหลัก สีส้มอ่อนน่ากิน */
 .btn {
-  margin-top: 12px;
-  padding: 10px 12px;
+  margin-top: 16px;
+  padding: 12px 24px;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
-  background: #111;
+  background: linear-gradient(135deg, #ff9800, #f57c00);
   color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(245, 124, 0, 0.3);
+  transition: transform 0.1s, box-shadow 0.1s;
 }
 
+.btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(245, 124, 0, 0.4);
+}
+
+.btn:disabled {
+  background: #e0e0e0;
+  box-shadow: none;
+  cursor: not-allowed;
+  color: #9e9e9e;
+}
+
+/* ปุ่มรอง สีเขียวอ่อน */
 .btn-secondary {
-  padding: 10px 12px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  background: #fafafa;
+  padding: 10px 16px;
+  border: 1px solid #a5d6a7;
+  border-radius: 12px;
+  background: #e8f5e9;
+  color: #2e7d32;
+  font-weight: 500;
   cursor: pointer;
+  transition: all 0.2s;
 }
 
+.btn-secondary:hover:not(:disabled) {
+  background: #c8e6c9;
+}
+
+/* ปุ่มลบ สีแดงซอฟต์ๆ */
 .btn-danger {
-  padding: 8px 10px;
-  border: 1px solid #f1b;
+  padding: 8px 12px;
+  border: 1px solid #ffcdd2;
   border-radius: 10px;
-  background: #fff;
+  background: #ffebee;
+  color: #c62828;
   cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-danger:hover {
+  background: #ffcdd2;
 }
 
 .muted {
-  color: #666;
+  color: #888;
   margin-top: 8px;
+  font-size: 0.9rem;
 }
 
 .list {
   padding-left: 0;
   list-style: none;
-  margin: 12px 0 0;
+  margin: 16px 0 0;
 }
 
 .list-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  border: 1px solid #eee;
-  border-radius: 10px;
-  margin-bottom: 8px;
+  padding: 12px 16px;
+  border: 1px solid #f0ece6;
+  background: #faf8f5;
+  border-radius: 12px;
+  margin-bottom: 10px;
 }
 
 .recipe {
-  border-top: 1px dashed #ddd;
-  padding-top: 12px;
-  margin-top: 12px;
+  border-top: 2px dashed #f0ece6;
+  padding-top: 20px;
+  margin-top: 20px;
 }
 
 .recipe-head {
@@ -101,31 +186,79 @@ body {
 }
 
 .imgwrap {
-  margin: 10px 0;
-  border-radius: 12px;
+  margin: 16px 0;
+  border-radius: 16px;
   overflow: hidden;
-  border: 1px solid #eee;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .imgwrap img {
   width: 100%;
   display: block;
+  object-fit: cover;
 }
 
+/* กล่องคำเตือน สีเหลืองส้ม */
 .warn {
-  padding: 10px;
-  border: 1px solid #ffd27a;
-  background: #fff7e6;
-  border-radius: 10px;
-  margin-bottom: 12px;
+  padding: 16px;
+  border: 1px solid #ffe0b2;
+  background: #fff3e0;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  color: #e65100;
+}
+
+.warn ul {
+  margin: 8px 0 0;
+  padding-left: 20px;
 }
 
 .code {
-  background: #0b0b0b;
-  color: #fff;
-  padding: 10px;
-  border-radius: 10px;
+  background: #2d2d2d;
+  color: #a5d6a7;
+  padding: 16px;
+  border-radius: 12px;
   overflow: auto;
+  font-size: 0.85rem;
+  font-family: monospace;
+}
+
+details {
+  margin-top: 16px;
+  background: #fdfbf9;
+  border: 1px solid #eae5df;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 500;
+  color: #666;
+  outline: none;
+}
+/* กรอบสำหรับจำกัดความสูงและให้เลื่อนอ่านได้ */
+.scrollable-area {
+  max-height: 650px; /* ปรับความสูงของกล่องได้ตามต้องการ */
+  overflow-y: auto;
+  padding-right: 12px; /* เว้นที่ให้ Scrollbar ไม่ทับเนื้อหา */
+}
+
+/* ตกแต่ง Scrollbar ให้สวยงามเข้ากับธีม */
+.scrollable-area::-webkit-scrollbar {
+  width: 8px;
+}
+.scrollable-area::-webkit-scrollbar-track {
+  background: #fffaf4;
+  border-radius: 8px;
+}
+.scrollable-area::-webkit-scrollbar-thumb {
+  background: #ffccbc; /* สีส้มอ่อน */
+  border-radius: 8px;
+}
+.scrollable-area::-webkit-scrollbar-thumb:hover {
+  background: #ffab91; /* สีส้มเข้มขึ้นนิดนึงตอนเอาเมาส์ชี้ */
 }
 
 @media (max-width: 900px) {

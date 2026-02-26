@@ -29,11 +29,13 @@
 
       <section class="card">
         <h2>ผลลัพธ์</h2>
-        <RecipeResults
-          :data="result"
-          :loading="loadingImage"
-          @generate-image="onGenerateImage"
-        />
+        <div class="scrollable-area">
+          <RecipeResults
+            :data="result"
+            :loading="loadingImage"
+            @generate-image="onGenerateImage"
+          />
+        </div>
       </section>
     </div>
   </div>
